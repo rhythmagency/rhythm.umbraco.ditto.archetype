@@ -1,7 +1,7 @@
 # Introduction
 
 A library of tools for working with [Umbraco Ditto](http://umbraco-ditto.readthedocs.io/en/latest/) and [Umbraco Archetype](https://our.umbraco.org/projects/backoffice-extensions/archetype/).
-It primarily contains a set of Ditto processors used to decorate classes and properties and assist with Ditto mapping operations related to Archetype data
+It primarily contains a set of Ditto processors used to decorate classes and properties and assist with Ditto mapping operations related to Archetype data.
 
 Refer to the [generated documentation](docs/generated.md) for more details.
 
