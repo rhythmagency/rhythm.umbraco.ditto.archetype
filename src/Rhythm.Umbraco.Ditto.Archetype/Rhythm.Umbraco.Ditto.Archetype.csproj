@@ -166,6 +166,9 @@
     <Reference Include="Rhythm.Core, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rhythm.Core.1.5.0\lib\net452\Rhythm.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Rhythm.Umbraco.Ditto, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rhythm.Umbraco.Ditto.1.4.0\lib\net452\Rhythm.Umbraco.Ditto.dll</HintPath>
+    </Reference>
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
       <Private>True</Private>

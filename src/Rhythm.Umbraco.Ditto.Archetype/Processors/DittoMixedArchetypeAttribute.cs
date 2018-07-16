@@ -3,12 +3,13 @@
 
     // Namespaces.
     using Our.Umbraco.Ditto;
+    using Rhythm.Umbraco.Ditto.Processors;
     using System.Collections.Generic;
 
     /// <summary>
-    /// This multi-processor combines the Archetype and DocTypeFactory processors to allow for
-    /// both of those processors to be run with this single unified processor rather than
-    /// having to specify the other two.
+    /// This multi-processor combines the Archetype, DocTypeFactory, and UndeferCollection
+    /// processors to allow for both of those processors to be run with this single
+    /// unified processor rather than having to specify the other three.
     /// </summary>
     /// <remarks>
     /// This can be used when you have an Umbraco property that is an Archetype that allows for
@@ -47,7 +48,10 @@
                 // created collection to a type that is indicated by the alias of the
                 // item (since they were created from Archetypes, this alias corresponds
                 // to the fieldset alias for each item).
-                new DittoDocTypeFactoryAttribute()
+                new DittoDocTypeFactoryAttribute(),
+                // Finally, resolve the collection immediately rather than relying on
+                // deferred execution.
+                new UndeferCollectionAttribute()
             };
         }
 
