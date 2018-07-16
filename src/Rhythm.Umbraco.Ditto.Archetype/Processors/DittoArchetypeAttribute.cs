@@ -6,6 +6,8 @@
     using global::Archetype.Models;
     using global::Umbraco.Core.Models;
     using Our.Umbraco.Ditto;
+    using Rhythm.Core;
+    using System.Collections;
 
     /// <summary>
     /// Allows for mapping of Archetype properties.
@@ -69,7 +71,8 @@
 
             if (value is ArchetypeModel)
             {
-                return ((ArchetypeModel)value).ToPublishedContentSet();
+                var result = ((ArchetypeModel)value).ToPublishedContentSet();
+                return CollectionExtensionMethods.AsList(result);
             }
 
             if (value is ArchetypeFieldsetModel)
@@ -77,7 +80,15 @@
                 return ((ArchetypeFieldsetModel)value).ToPublishedContent();
             }
 
-            return value;
+            if (value is IEnumerable)
+            {
+                return CollectionExtensionMethods.AsList(value as dynamic);
+            }
+            else
+            {
+                return value;
+            }
+
         }
 
         #endregion
