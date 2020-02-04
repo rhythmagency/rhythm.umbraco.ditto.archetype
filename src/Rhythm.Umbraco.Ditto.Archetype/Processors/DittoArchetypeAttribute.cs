@@ -62,8 +62,23 @@
         /// </returns>
         public override object ProcessValue()
         {
-            var value = this.Value;
+            return ProcessSpecifiedValue(Value);
+        }
 
+        /// <summary>
+        /// Processes the specified value.
+        /// </summary>
+        /// <param name="value">
+        /// The value to process.
+        /// </param>
+        /// <returns>
+        /// The processed value.
+        /// </returns>
+        /// <remarks>
+        /// This method is necessary in order to facilitate unit tests.
+        /// </remarks>
+        public object ProcessSpecifiedValue(object value)
+        {
             if (value is IPublishedContent)
             {
                 value = base.ProcessValue();
@@ -88,7 +103,6 @@
             {
                 return value;
             }
-
         }
 
         #endregion
